@@ -1,16 +1,28 @@
 {
-    "blogs":[
-        {
-            "title": "My First Blog",
-            "body": "Why do we use it?\nIt is a long established fact that a reader will be distracted",
-            "author": "Armani",
-            "id":1
-        },
-        {
-            "title": "Opening Party!",
-            "body":"Why do we use it?\nIt is a long established fact that a reader will be distracted",
-            "author":"Marissa",
-            "id":2
-        }
-    ]
+  "blogs": [
+    {
+      "title": "My First Blog",
+      "body": "Why do we use it?\nIt is a long established fact that a reader will be distracted",
+      "author": "Armani",
+      "id": "1"
+    },
+    {
+      "title": "Opening Party!",
+      "body": "Why do we use it?\nIt is a long established fact that a reader will be distracted",
+      "author": "Marissa",
+      "id": "2"
+    },
+    {
+      "id": "d5cf",
+      "title": "Blogging on my blog",
+      "body": "Hello World!",
+      "author": "Armani"
+    },
+    {
+      "id": "ac15",
+      "title": "Another Blog on my Blog",
+      "body": "Hello Again!",
+      "author": "Armani"
+    }
+  ]
 }
