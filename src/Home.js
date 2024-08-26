@@ -2,30 +2,41 @@ import { useState, useEffect } from "react";
 import BlogList from "./BlogList";
 
 const Home = () => {
-    const [blogs, setBlogs] = useState(null)//([
-    //     {title: 'My New Website', body: 'lorem ipsum..', author: 'Armani', id: 1},
-    //     {title: 'Welcome party', body: 'lorem ipsum..', author: 'Marissa', id: 2},
-    //     {title: 'Web dev top tips', body: 'lorem ipsum..', author: 'Mason', id: 3}
-    // ]);
+    const [blogs, setBlogs] = useState(null)
 
-    const [name, setName] = useState('Armani');
+    const [isPending, setIsPending] = useState(true);
+
+    const [error, setError] = useState(null)
 
 
 
     useEffect(() => {
-        fetch('http://localhost:8000/blogs')
+        setTimeout(() =>{
+            fetch('http://localhost:8000/blogs')
         .then(res => {
+            console.log(res);
+            if(!res.ok){
+                throw Error('Could Not Fetch Data')
+            }
             return res.json();
         })
         .then(data => {
-            console.log(data);
             setBlogs(data);
+            setIsPending(false);
+            setError(null)
         })
+        .catch(err => {
+            setIsPending(false);
+            setError(err.message);
+        })
+        }, 1000);
     }, []);
 
     return(
         <div className="home">
-            {blogs && <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete} />}
+            {error && <div>{error}</div>}
+            {isPending && <div>Loading...</div>}
+            {blogs && <BlogList blogs={blogs} title="All Blogs!"/>}
             {blogs && <BlogList blogs={blogs.filter((blog) => blog.author === 'Armani' )} title="Armani's Blogs" />}
             
         </div>
