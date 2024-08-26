@@ -4,13 +4,13 @@
             "title": "My First Blog",
             "body": "Why do we use it?\nIt is a long established fact that a reader will be distracted",
             "author": "Armani",
-            "id": 1
+            "id":1
         },
         {
             "title": "Opening Party!",
             "body":"Why do we use it?\nIt is a long established fact that a reader will be distracted",
             "author":"Marissa",
-            "id": 2
+            "id":2
         }
     ]
 }
