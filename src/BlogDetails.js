@@ -16,6 +16,7 @@ const BlogDetails = () => {
                     <div>{blog.body}</div>
                 </article>
             )}
+            <p>sdasdasd</p>
         </div>
      );
 }
