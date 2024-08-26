@@ -1,21 +1,28 @@
-import userEvent from "@testing-library/user-event";
 import { useState } from "react";
 
 const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('Armani');
+
+    const handleSubmit= (e) => {
+        e.preventDefault();
+        const blog = {title, body, author};
+
+        console.log(blog);
+        
+    }
+
     return (
         <div className="create">
         <h2>Add a New Blog</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
             <label>Blog Title:</label>
-            <input type="text"
-                required 
-                value={title}
-                onChange={(e) => setTitle(e.target.value)} />
-        </form>
-        <form>
+            <input
+             type="text"
+             required 
+             value={title}
+             onChange={(e) => setTitle(e.target.value)}/>
             <label>Blog body:</label>
             <textarea
                 required 
@@ -33,6 +40,7 @@ const Create = () => {
             <button>Add Blog</button>
         </form>
         </div>
+        
       );
 }
  
